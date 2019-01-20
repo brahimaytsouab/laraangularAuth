@@ -12,6 +12,14 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { RequestResetComponent } from './components/password/request-reset/request-reset.component';
 import { ResponseResetComponent } from './components/password/response-reset/response-reset.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { JarwisService } from './Services/jarwis.service';
+import { TokenService } from './Services/token.service';
+import { AuthService } from './Services/auth.service';
+import { AfterLoginService } from './Services/after-login.service';
+import { BeforLoginService } from './Services/befor-login.service';
+// Import your library
+import { SnotifyModule, SnotifyService, ToastDefaults } from 'ng-snotify';
+
 
 @NgModule({
   declarations: [
@@ -28,8 +36,17 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    SnotifyModule
   ],
-  providers: [],
+  providers: [
+    JarwisService
+    , TokenService
+    , AuthService
+    , AfterLoginService
+    , BeforLoginService
+    , { provide: 'SnotifyToastConfig', useValue: ToastDefaults },
+    SnotifyService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

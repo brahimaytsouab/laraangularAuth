@@ -1,8 +1,9 @@
 <nav class="navbar navbar-light bg-light">
   <a class="navbar-brand">Navbar</a>
   <div>
-    <a class="navbar-brand" [routerLink]="['/login']" routerLinkActive="router-link-active">Login</a>
-    <a class="navbar-brand" [routerLink]="['/profile']" routerLinkActive="router-link-active">Profile</a>
+    <a class="navbar-brand" [routerLink]="['/login']" routerLinkActive="router-link-active" *ngIf=!loggedIn>Login</a>
+    <a class="navbar-brand" href="#" (click)="logout($event)" routerLinkActive="router-link-active" *ngIf=loggedIn>Logout</a>
+    <a class="navbar-brand" [routerLink]="['/profile']" routerLinkActive="router-link-active" *ngIf=loggedIn>Profile</a>
   </div>
 
 </nav>
