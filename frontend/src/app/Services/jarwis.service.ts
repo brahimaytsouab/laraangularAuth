@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +15,8 @@ export class JarwisService {
   }
 
   login(data) {
-    return this.http.post(`${this.baseUrl}/login`, data);
+    // const headers = new HttpHeaders({'ignoreProgressBar': ''});
+    return this.http.post(`${this.baseUrl}/login`, data/*, {headers: headers}*/);
   }
 
   sendPasswordResetLink(data) {

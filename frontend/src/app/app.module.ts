@@ -20,6 +20,8 @@ import { BeforLoginService } from './Services/befor-login.service';
 // Import your library
 import { SnotifyModule, SnotifyService, ToastDefaults } from 'ng-snotify';
 
+import { NgProgressModule } from '@ngx-progressbar/core';
+import { NgProgressHttpModule } from '@ngx-progressbar/http';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { SnotifyModule, SnotifyService, ToastDefaults } from 'ng-snotify';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    SnotifyModule
+    SnotifyModule,
+    NgProgressModule,
+    NgProgressHttpModule
   ],
   providers: [
     JarwisService
