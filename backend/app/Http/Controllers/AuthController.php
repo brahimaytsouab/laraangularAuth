@@ -16,6 +16,9 @@ class AuthController extends Controller
      */
     public function __construct()
     {
+        /**
+         * test conflict
+         */
         $this->middleware('auth:api', ['except' => ['login', 'signup']]);
     }
 
